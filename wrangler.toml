@@ -1,0 +1,23 @@
+name = "glmw-calendar"
+compatibility_date = "2024-09-23"
+
+# KV namespace for events, districts, sessions
+# After running: npx wrangler kv namespace create CALENDAR_KV
+# paste the returned id below
+[[kv_namespaces]]
+binding = "CALENDAR_KV"
+id = "REPLACE_WITH_YOUR_KV_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_ID"
+
+[vars]
+# Your Cloudflare Pages domain (or custom domain once set up)
+SITE_URL = "https://glmw-calendar.pages.dev"
+# Only @glmwscouts.org.uk Google accounts can edit
+ALLOWED_DOMAIN = "glmwscouts.org.uk"
+# Fallback editor password (for non-Google login)
+EDITOR_PASSWORD = "glmw2027"
+
+# Secrets – set these with:
+#   npx wrangler secret put GOOGLE_CLIENT_ID
+#   npx wrangler secret put GOOGLE_CLIENT_SECRET
+# (never put real values in this file)
